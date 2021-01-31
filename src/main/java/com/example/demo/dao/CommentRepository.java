@@ -1,6 +1,8 @@
 package com.example.demo.dao;
 
 import com.example.demo.pojo.Comment;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
@@ -9,4 +11,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  * @CreateDate: 2021/1/30 22:39
  */
 public interface CommentRepository extends MongoRepository<Comment, String> {
+    Page<Comment> findByParentid(String parentid, Pageable pageable);
 }

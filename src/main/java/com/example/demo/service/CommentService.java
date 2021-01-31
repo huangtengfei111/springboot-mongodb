@@ -1,11 +1,16 @@
 package com.example.demo.service;
 
 import com.example.demo.pojo.Comment;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
 
 public interface CommentService {
-    public void save(Comment comment);
-    public List<Comment> findList();
+
+    void save(Comment comment);
+
+    List<Comment> findList();
+
+    Page<Comment> findListByParentid(String parentid, int page, int size);
 }
